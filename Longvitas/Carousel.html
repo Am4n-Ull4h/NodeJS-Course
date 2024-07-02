@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main{
+        height: 200px;
+        width: 200px;
+        margin: auto;
+        margin-top: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .main img{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        transition: 1s;
+    }
+</style>
+<body>
+    
+    <div class="main">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">
+        <img src="/IMGS/jgj.png" alt="">
+        <img src="/IMGS/Untitled.png" alt="">   
+    </div>
+
+    <button>Prev</button>
+    <button>Next</button>
+
+
+
+
+    <script>
+        let img = document.querySelectorAll('.main img')
+
+        img.forEach((im,i)=>{
+            im.style.marginLeft = i*100+'%'
+        })
+
+
+        let x = 0
+
+        let btn1 = document.querySelectorAll('button')[0]
+        let btn2 = document.querySelectorAll('button')[1]
+
+
+
+        btn1.addEventListener('click',()=>{
+            if(x > 0 && x <= img.length){
+                x--
+            aman()
+            }
+        })
+
+        btn2.addEventListener('click',()=>{
+            if(x >= 0 && x < img.length-1){
+                x++
+            aman()
+            }
+        })
+
+        function aman(){
+                img.forEach((img1)=>{
+                img1.style.transform = `translateX(${-x*100+'%'})`
+            })
+        }
+    </script>
+</body>
+</html>
